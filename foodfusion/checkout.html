@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | FoodFusion</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><i class="fa-solid fa-pepper-hot"></i> Food<span>Fusion</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#special">Specials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      <a href="favorites.html" class="icon-btn"><i class="fa-solid fa-heart"></i></a>
+      <a href="cart.html" class="icon-btn cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header">
+  <h1>Checkout</h1>
+  <p><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> Checkout</p>
+</section>
+
+<!-- ===== CHECKOUT ===== -->
+<section class="checkout-section">
+  <div class="checkout-grid">
+
+    <!-- LEFT: FORM -->
+    <div class="checkout-form-wrap">
+      <form id="checkoutForm">
+        <h3 class="checkout-heading"><i class="fa-solid fa-truck"></i> Delivery Information</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="custName" placeholder="Enter your name" required>
+            <span class="error-msg" id="err-custName"></span>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="custPhone" placeholder="Enter your phone number" required>
+            <span class="error-msg" id="err-custPhone"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Delivery Address</label>
+          <textarea id="custAddress" rows="3" placeholder="House no, street, landmark..." required></textarea>
+          <span class="error-msg" id="err-custAddress"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" id="custCity" placeholder="Enter your city" required>
+            <span class="error-msg" id="err-custCity"></span>
+          </div>
+          <div class="form-group">
+            <label>Zip Code</label>
+            <input type="text" id="custZip" placeholder="Enter zip code" required>
+            <span class="error-msg" id="err-custZip"></span>
+          </div>
+        </div>
+
+        <h3 class="checkout-heading"><i class="fa-solid fa-credit-card"></i> Payment Method</h3>
+        <div class="payment-options">
+          <label class="payment-card">
+            <input type="radio" name="payment" value="cod" checked>
+            <span class="pc-icon"><i class="fa-solid fa-money-bill-wave"></i></span>
+            <span class="pc-text"><strong>Cash on Delivery</strong><small>Pay when your order arrives</small></span>
+            <span class="pc-check"><i class="fa-solid fa-circle-check"></i></span>
+          </label>
+          <label class="payment-card">
+            <input type="radio" name="payment" value="upi">
+            <span class="pc-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+            <span class="pc-text"><strong>UPI Payment</strong><small>Pay via Google Pay / PhonePe / Paytm</small></span>
+            <span class="pc-check"><i class="fa-solid fa-circle-check"></i></span>
+          </label>
+          <label class="payment-card">
+            <input type="radio" name="payment" value="card">
+            <span class="pc-icon"><i class="fa-solid fa-credit-card"></i></span>
+            <span class="pc-text"><strong>Credit / Debit Card</strong><small>Visa, Mastercard, RuPay accepted</small></span>
+            <span class="pc-check"><i class="fa-solid fa-circle-check"></i></span>
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <div class="order-summary-wrap">
+      <h3 class="checkout-heading"><i class="fa-solid fa-receipt"></i> Order Summary</h3>
+      <div class="summary-items" id="summaryItems"></div>
+
+      <div class="summary-totals">
+        <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">₹0</span></div>
+        <div class="summary-row"><span>Delivery Fee</span><span id="sumDelivery">₹40</span></div>
+        <div class="summary-row"><span>GST (5%)</span><span id="sumTax">₹0</span></div>
+        <div class="summary-row total-row"><span>Total</span><span id="sumTotal">₹0</span></div>
+      </div>
+
+      <button type="submit" form="checkoutForm" class="btn btn-primary place-order-btn" id="placeOrderBtn">
+        Place Order <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <p class="empty-cart-note" id="emptyCartNote" style="display:none;">
+        Your cart is empty. <a href="menu.html">Browse the menu →</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a href="index.html" class="logo">Food<span>Fusion</span></a>
+      <p>Serving happiness on a plate since day one.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Opening Hours</h4>
+      <p>Mon - Fri: 10:00 AM - 11:00 PM</p>
+      <p>Sat - Sun: 10:00 AM - 12:00 AM</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-location-dot"></i> 123 Food Street, Delhi</p>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fa-solid fa-envelope"></i> hello@foodfusion.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 FoodFusion. All Rights Reserved.</p></div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

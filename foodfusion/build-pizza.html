@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Your Own Pizza | FoodFusion</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><i class="fa-solid fa-pepper-hot"></i> Food<span>Fusion</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#special">Specials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      <a href="favorites.html" class="icon-btn"><i class="fa-solid fa-heart"></i></a>
+      <a href="cart.html" class="icon-btn cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header pizza-builder-header">
+  <h1><i class="fa-solid fa-pizza-slice"></i> Build Your Own Pizza</h1>
+  <p><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> Build Your Pizza</p>
+</section>
+
+<!-- ===== PIZZA BUILDER ===== -->
+<section class="builder-section">
+  <div class="builder-grid">
+
+    <!-- LEFT: visual pizza preview -->
+    <div class="pizza-preview-wrap">
+      <div class="pizza-preview" id="pizzaPreview">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80" alt="Your custom pizza" class="pizza-base-img">
+        <div class="topping-layer" id="toppingLayer"></div>
+      </div>
+      <div class="preview-tags" id="previewTags"></div>
+    </div>
+
+    <!-- RIGHT: options -->
+    <div class="builder-options">
+
+      <!-- SIZE -->
+      <div class="option-block">
+        <h3><span class="opt-num">1</span> Choose Size</h3>
+        <div class="pill-options" id="sizeOptions">
+          <label class="pill-option">
+            <input type="radio" name="size" value="small" data-price="199">
+            <span>Small <small>+₹199</small></span>
+          </label>
+          <label class="pill-option active">
+            <input type="radio" name="size" value="medium" data-price="299" checked>
+            <span>Medium <small>+₹299</small></span>
+          </label>
+          <label class="pill-option">
+            <input type="radio" name="size" value="large" data-price="399">
+            <span>Large <small>+₹399</small></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- CRUST -->
+      <div class="option-block">
+        <h3><span class="opt-num">2</span> Choose Crust</h3>
+        <div class="pill-options" id="crustOptions">
+          <label class="pill-option active">
+            <input type="radio" name="crust" value="thin" data-price="0" checked>
+            <span>Thin Crust <small>+₹0</small></span>
+          </label>
+          <label class="pill-option">
+            <input type="radio" name="crust" value="cheeseburst" data-price="50">
+            <span>Cheese Burst <small>+₹50</small></span>
+          </label>
+          <label class="pill-option">
+            <input type="radio" name="crust" value="pan" data-price="30">
+            <span>Pan Crust <small>+₹30</small></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- CHEESE -->
+      <div class="option-block">
+        <h3><span class="opt-num">3</span> Choose Cheese</h3>
+        <div class="pill-options" id="cheeseOptions">
+          <label class="pill-option active">
+            <input type="radio" name="cheese" value="normal" data-price="0" checked>
+            <span>Normal <small>+₹0</small></span>
+          </label>
+          <label class="pill-option">
+            <input type="radio" name="cheese" value="extra" data-price="40">
+            <span>Extra Cheese <small>+₹40</small></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- TOPPINGS -->
+      <div class="option-block">
+        <h3><span class="opt-num">4</span> Add Toppings <small class="opt-hint">(select any)</small></h3>
+        <div class="topping-grid" id="toppingOptions">
+          <label class="topping-card">
+            <input type="checkbox" name="topping" value="Olives" data-price="20" data-emoji="🫒">
+            <span class="tc-emoji">🫒</span><span class="tc-name">Olives</span><span class="tc-price">+₹20</span>
+          </label>
+          <label class="topping-card">
+            <input type="checkbox" name="topping" value="Mushroom" data-price="20" data-emoji="🍄">
+            <span class="tc-emoji">🍄</span><span class="tc-name">Mushroom</span><span class="tc-price">+₹20</span>
+          </label>
+          <label class="topping-card">
+            <input type="checkbox" name="topping" value="Paneer" data-price="25" data-emoji="🧀">
+            <span class="tc-emoji">🧀</span><span class="tc-name">Paneer</span><span class="tc-price">+₹25</span>
+          </label>
+          <label class="topping-card">
+            <input type="checkbox" name="topping" value="Corn" data-price="15" data-emoji="🌽">
+            <span class="tc-emoji">🌽</span><span class="tc-name">Corn</span><span class="tc-price">+₹15</span>
+          </label>
+          <label class="topping-card">
+            <input type="checkbox" name="topping" value="Onion" data-price="15" data-emoji="🧅">
+            <span class="tc-emoji">🧅</span><span class="tc-name">Onion</span><span class="tc-price">+₹15</span>
+          </label>
+          <label class="topping-card">
+            <input type="checkbox" name="topping" value="Capsicum" data-price="15" data-emoji="🫑">
+            <span class="tc-emoji">🫑</span><span class="tc-name">Capsicum</span><span class="tc-price">+₹15</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STICKY PRICE BAR -->
+  <div class="price-bar">
+    <div class="price-bar-inner">
+      <div class="price-info">
+        <span>Your Pizza Total</span>
+        <h2 id="livePrice">₹299</h2>
+      </div>
+      <button class="btn btn-primary" id="addPizzaBtn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a href="index.html" class="logo">Food<span>Fusion</span></a>
+      <p>Serving happiness on a plate since day one.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Opening Hours</h4>
+      <p>Mon - Fri: 10:00 AM - 11:00 PM</p>
+      <p>Sat - Sun: 10:00 AM - 12:00 AM</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-location-dot"></i> 123 Food Street, Delhi</p>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fa-solid fa-envelope"></i> hello@foodfusion.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 FoodFusion. All Rights Reserved.</p></div>
+</footer>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i> <span id="toastMsg">Added to cart!</span></div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+<script src="js/build-pizza.js"></script>
+</body>
+</html>

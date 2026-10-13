@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart | FoodFusion</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><i class="fa-solid fa-pepper-hot"></i> Food<span>Fusion</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#special">Specials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      <a href="favorites.html" class="icon-btn"><i class="fa-solid fa-heart"></i></a>
+      <a href="cart.html" class="icon-btn cart-icon active-page">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="menu.html" class="btn btn-primary nav-order-btn">Order Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="search-box" id="searchBox">
+    <input type="text" id="searchInput" placeholder="Search for pizza, burger, drinks...">
+    <button id="closeSearch"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header">
+  <h1>Your Cart</h1>
+  <p><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> Cart</p>
+</section>
+
+<!-- ===== CART ===== -->
+<section class="cart-section">
+
+  <div class="cart-grid" id="cartGrid">
+
+    <!-- LEFT: cart items -->
+    <div class="cart-items-wrap">
+      <div class="cart-table-head">
+        <span>Item</span>
+        <span>Price</span>
+        <span>Quantity</span>
+        <span>Total</span>
+        <span></span>
+      </div>
+      <div id="cartItemsList"></div>
+
+      <div class="cart-empty" id="cartEmpty" style="display:none;">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>Your cart is empty</h3>
+        <p>Looks like you haven't added anything yet.</p>
+        <a href="menu.html" class="btn btn-primary">Browse Menu</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: bill summary -->
+    <div class="cart-summary-wrap" id="cartSummaryWrap">
+      <h3 class="checkout-heading"><i class="fa-solid fa-receipt"></i> Bill Summary</h3>
+      <div class="summary-totals" style="border-top:none;padding-top:0;">
+        <div class="summary-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+        <div class="summary-row"><span>Delivery Fee</span><span id="cartDelivery">₹40</span></div>
+        <div class="summary-row"><span>GST (5%)</span><span id="cartTax">₹0</span></div>
+        <div class="summary-row total-row"><span>Total</span><span id="cartTotal">₹0</span></div>
+      </div>
+      <a href="checkout.html" class="btn btn-primary place-order-btn" id="proceedBtn">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="menu.html" class="continue-shopping-link"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== YOU MIGHT ALSO LIKE ===== -->
+<section class="also-like" id="alsoLikeSection">
+  <p class="section-tag">Don't Stop Here</p>
+  <h2 class="section-title">You Might Also Like</h2>
+  <div class="popular-grid" id="alsoLikeGrid"></div>
+</section>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a href="index.html" class="logo">Food<span>Fusion</span></a>
+      <p>Serving happiness on a plate since day one.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Opening Hours</h4>
+      <p>Mon - Fri: 10:00 AM - 11:00 PM</p>
+      <p>Sat - Sun: 10:00 AM - 12:00 AM</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-location-dot"></i> 123 Food Street, Delhi</p>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fa-solid fa-envelope"></i> hello@foodfusion.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 FoodFusion. All Rights Reserved.</p></div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
